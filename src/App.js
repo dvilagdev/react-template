@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Paper from "@material-ui/core/Paper";
 import "./styles.css";
 
 // Importar componentes
@@ -25,12 +26,14 @@ class App extends Component {
     console.log("Repinto Padre. Valor: " + this.state.comment);
     return (
       <div className="App">
-        <Comment
-          comment={this.state.comment}
-          handleComment={this.handleComment}
-        />
-        <br />
-        Valor padre: {this.state.comment}
+        <Paper elevation={3} className="OutherPaper">
+          <Comment
+            comment={this.state.comment}
+            handleComment={this.handleComment}
+          />
+          <br />
+          Valor padre: {this.state.comment}
+        </Paper>
       </div>
     );
   }
